@@ -12,6 +12,9 @@ def register (names,days,schedule,n):
         name = input("Ingrese el nombre de la persona a registrar: ")
         names.append(name)
         for j in range(7):
+            if(j==0):
+                print("Si no tiene dato de horario en un dia de la semana, deje el campo vacío")
+             
             schedule[i][j] = input("Ingrese horario del dia " + days[j] + ": ")
     
     return schedule, name
@@ -48,8 +51,8 @@ while True:
         file.write(names[row] + "-" + names[i+1] + ": " + str(cont) + "\n")
         cont = 0  
         
-    row = row + 1
+    row += 1
     initial += 1
-    if(init == n):
+    if(initial == n):
         file.close()
         break
