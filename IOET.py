@@ -24,7 +24,14 @@ days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'
 nameTxt = input("Ingrese nombre del archivo representado por semanas. Ejemplo: 'Semana 1': \n")
 file= open(nameTxt+".txt","w")
 
-rows = input("Ingrese la cantidad de personas que va a registrar: ")
+while True:
+    rows = input("Ingrese la cantidad de personas que va a registrar: ")
+    try:
+        if(int(rows)):
+            break
+    except ValueError:
+        print("Ingresa un número")
+        
 n = int(rows)
 m = 7
 schedule = createMatrix(n,m)
